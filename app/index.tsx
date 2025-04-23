@@ -14,7 +14,7 @@ import {
 
 import { HelloWave } from "@/components/HelloWave";
 import { ThemedView } from "@/components/ThemedView";
-import { useState } from "react";
+import React, { useState } from "react";
 const image = require("../assets/images/party.jpg");
 export default function HomeScreen() {
   const [title, setTitle] = useState("Events");
