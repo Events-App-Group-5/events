@@ -27,7 +27,7 @@ export default function Example() {
           />
 
           <Text style={styles.title}>
-            <Text style={{ color: "#075eec" }}>Please Sign In</Text>
+            <Text style={{ color: "#075eec" }}> Sign In</Text>
           </Text>
 
           <Text style={styles.subtitle}>
