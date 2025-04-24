@@ -14,6 +14,7 @@ export default function Example() {
     email: "",
     password: "",
   });
+  const image = require("../../assets/images/youreventslogo.png");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e8ecf4" }}>
       <View style={styles.container}>
@@ -22,7 +23,7 @@ export default function Example() {
             alt="App Logo"
             resizeMode="contain"
             style={styles.headerImg}
-            source={{ uri: "https://assets.withfra.me/SignIn.2.png" }}
+            source={image}
           />
 
           <Text style={styles.title}>
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
     height: 80,
     alignSelf: "center",
     marginBottom: 36,
+    borderRadius: 10,
   },
   /** Form */
   form: {
