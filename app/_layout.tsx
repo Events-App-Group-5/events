@@ -36,7 +36,9 @@ export default function RootLayout({
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerTitle: "Home" }}>{children}</Stack>
+      <Stack screenOptions={{ headerShown: true, headerTitle: "" }}>
+        {children}
+      </Stack>
     </ThemeProvider>
   );
 }
