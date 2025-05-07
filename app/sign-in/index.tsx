@@ -16,7 +16,7 @@ export default function Example() {
   });
   const image = require("../../assets/images/youreventslogo.png");
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#e8ecf4" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
