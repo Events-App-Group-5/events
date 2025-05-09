@@ -15,7 +15,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import MainButton from "@/components/MainButton";
 import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/FirebaseConfig";
+// import { auth } from "@/FirebaseConfig";
 
 export default function RegisterScreen() {
   const [firstName, setFirstName] = useState("");
@@ -27,7 +27,7 @@ export default function RegisterScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const onChangeDate = (event: any, selectedDate: any) => {
     setShowDatePicker(false);
     if (selectedDate) {
@@ -35,15 +35,15 @@ export default function RegisterScreen() {
     }
   };
   const router = useRouter();
-  const signUp = async () => {
-    try {
-      const user = await createUserWithEmailAndPassword(auth, email, password)
-      if (user) router.replace('/dashboard');
-    } catch (error: any) {
-      console.log(error)
-      alert('Sign in failed: ' + error.message);
-    }
-  }
+  // const signUp = async () => {
+  //   try {
+  //     const user = await createUserWithEmailAndPassword(auth, email, password)
+  //     if (user) router.replace('/dashboard');
+  //   } catch (error: any) {
+  //     console.log(error)
+  //     alert('Sign in failed: ' + error.message);
+  //   }
+  // }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />

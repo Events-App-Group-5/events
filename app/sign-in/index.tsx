@@ -14,8 +14,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import MainButton from "@/components/MainButton";
 import { useRouter } from "expo-router";
-import { auth } from '../../FirebaseConfig'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+// import { auth } from '../../FirebaseConfig'
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -23,18 +23,15 @@ export default function LoginScreen() {
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-
-
-  const signIn = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(auth, email, password)
-      if (user) router.push('/dashboard');
-    } catch (error: any) {
-      console.log(error)
-      alert('Sign in failed: ' + error.message);
-    }
-  }
-
+  // const signIn = async () => {
+  //   try {
+  //     const user = await signInWithEmailAndPassword(auth, email, password)
+  //     if (user) router.push('/dashboard');
+  //   } catch (error: any) {
+  //     console.log(error)
+  //     alert('Sign in failed: ' + error.message);
+  //   }
+  // }
 
   const router = useRouter();
   return (
@@ -101,7 +98,7 @@ export default function LoginScreen() {
 
         <MainButton
           onPress={() => {
-            signIn()
+            router.push("/dashboard/(tabs)");
           }}
         >
           Log in
