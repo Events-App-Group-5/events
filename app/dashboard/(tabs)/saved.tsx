@@ -7,9 +7,7 @@ export default function SavedScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>Saved Events</Text>
-        <Text style={styles.subtitle}>
-          Your bookmarked events will appear here
-        </Text>
+        <Text style={styles.subtitle}>Coming Soon</Text>
       </View>
     </SafeAreaView>
   );

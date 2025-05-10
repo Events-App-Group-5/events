@@ -26,7 +26,7 @@ export default function EventList({ events }: EventListProps) {
         ref={flatListRef}
         data={events}
         renderItem={({ item }) => <EventCard event={item} />}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.imageUrl.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   listContent: {
-    paddingLeft: 0,
+    paddingVertical: 8,
+    paddingLeft: 4,
     paddingRight: 16,
   },
 });

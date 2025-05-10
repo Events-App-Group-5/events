@@ -13,7 +13,7 @@ export default function ProfileScreen() {
           style={styles.avatar}
         />
         <Text style={styles.title}>My Profile</Text>
-        <Text style={styles.subtitle}>Manage your account and preferences</Text>
+        <Text style={styles.subtitle}> Coming Soon</Text>
       </View>
     </SafeAreaView>
   );

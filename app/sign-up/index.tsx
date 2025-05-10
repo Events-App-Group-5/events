@@ -15,15 +15,14 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import MainButton from "@/components/MainButton";
 import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "@/FirebaseConfig";
+import { auth } from "@/FirebaseConfig";
 
 export default function RegisterScreen() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [birthDate, setBirthDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [phone, setPhone] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,15 +34,15 @@ export default function RegisterScreen() {
     }
   };
   const router = useRouter();
-  // const signUp = async () => {
-  //   try {
-  //     const user = await createUserWithEmailAndPassword(auth, email, password)
-  //     if (user) router.replace('/dashboard');
-  //   } catch (error: any) {
-  //     console.log(error)
-  //     alert('Sign in failed: ' + error.message);
-  //   }
-  // }
+  const signUp = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      if (user) router.replace("/dashboard/(tabs)");
+    } catch (error: any) {
+      console.log(error);
+      alert("Sign in failed: " + error.message);
+    }
+  };
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -86,30 +85,6 @@ export default function RegisterScreen() {
           onChangeText={setEmail}
         />
 
-        <TouchableOpacity
-          style={styles.input}
-          onPress={() => setShowDatePicker(true)}
-        >
-          <Text style={{ color: birthDate ? "#000" : "#999" }}>
-            {birthDate.toLocaleDateString("en-GB")}
-          </Text>
-          <Ionicons
-            name="calendar"
-            size={20}
-            color="#999"
-            style={styles.iconRight}
-          />
-        </TouchableOpacity>
-        {showDatePicker && (
-          <DateTimePicker
-            value={birthDate}
-            mode="date"
-            display={Platform.OS === "ios" ? "spinner" : "default"}
-            onChange={onChangeDate}
-            maximumDate={new Date()}
-          />
-        )}
-
         <View style={styles.passwordContainer}>
           <TextInput
             value={password}
@@ -133,7 +108,7 @@ export default function RegisterScreen() {
 
         <MainButton
           onPress={() => {
-            router.push("/dashboard");
+            signUp();
           }}
         >
           Register
