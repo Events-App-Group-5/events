@@ -5,7 +5,7 @@ import EventsScreen from "@/components/screens/EventsScreen";
 
 export default function DiscoverScreen() {
   return (
-    <SafeAreaView style={styles.container} edges={["top"]}>
+    <SafeAreaView edges={["top"]} style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
