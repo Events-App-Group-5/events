@@ -9,6 +9,7 @@ import Animated, {
   withDelay,
 } from "react-native-reanimated";
 import { Event } from "@/types/event";
+import { useRouter } from "expo-router";
 
 interface EventCardProps {
   event: Event;
@@ -18,12 +19,14 @@ export default function EventCard({ event }: EventCardProps) {
   const [isFavorite, setIsFavorite] = useState(event.isFavorite);
   const scale = useSharedValue(1);
   const bookmarkScale = useSharedValue(1);
+  const router = useRouter();
 
   const handlePress = () => {
     scale.value = withSequence(
       withSpring(0.95, { damping: 10 }),
       withDelay(100, withSpring(1))
     );
+    router.push(`/dashboard/event/${event.id}`);
   };
 
   const handleFavorite = () => {
