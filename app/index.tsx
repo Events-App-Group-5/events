@@ -19,10 +19,10 @@ export default function Example() {
           <View style={styles.hero}>
             <Image source={image} style={styles.heroImage} resizeMode="cover" />
           </View>
-          <Text style={styles.title}>Ready to meet your tribe?</Text>
+          <Text style={styles.title}>Ready to meet your people?</Text>
           <Text style={styles.text}>
             Keep track of the hottest and greatest events in your location so
-            you can sourround yourself with your tribe
+            you can sourround yourself with your own echo chamber
           </Text>
         </View>
         <TouchableOpacity
@@ -113,10 +113,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 12,
     marginTop: 20,
+    marginBottom: 50,
   },
   buttonText: {
     fontSize: 15,
     fontWeight: "500",
     color: "#fff",
   },
-});
+})
