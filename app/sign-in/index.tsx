@@ -21,7 +21,6 @@ import { auth } from "@/FirebaseConfig";
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const signIn = async () => {
@@ -83,20 +82,6 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.row}>
-          <View style={styles.rememberContainer}>
-            <Switch
-              value={rememberMe}
-              onValueChange={setRememberMe}
-              thumbColor={rememberMe ? "#007aff" : "#f4f3f4"}
-            />
-            <Text style={styles.rememberText}>Remember me</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.forgot}>Forgot Password?</Text>
-          </TouchableOpacity>
-        </View>
-
         <MainButton
           onPress={() => {
             signIn();
@@ -104,21 +89,6 @@ export default function LoginScreen() {
         >
           Log in
         </MainButton>
-
-        <Text style={styles.or}>Or login with</Text>
-
-        <View style={styles.socialContainer}>
-          <TouchableOpacity style={styles.socialButton}>
-            <Ionicons name="logo-google" size={20} color="#EA4335" />
-            <Text style={styles.socialText}>Google</Text>
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.terms}>
-          By signing up, you agree to the{" "}
-          <Text style={styles.link}>Terms of Service</Text> and{" "}
-          <Text style={styles.link}>Data Processing Agreement</Text>
-        </Text>
       </View>
     </SafeAreaView>
   );
@@ -161,6 +131,9 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
   },
   label: {
     marginBottom: 4,
