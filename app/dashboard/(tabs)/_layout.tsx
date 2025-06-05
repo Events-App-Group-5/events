@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs } from "expo-router";
 import { Compass, Calendar, Bookmark, User } from "lucide-react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function TabLayout() {
   return (
@@ -12,8 +13,8 @@ export default function TabLayout() {
         tabBarStyle: {
           borderTopWidth: 1,
           borderTopColor: "#f0f0f0",
-          height: 60,
-          paddingBottom: 8,
+          height: 120,
+          paddingBottom: 28,
           paddingTop: 8,
         },
         tabBarLabelStyle: {
@@ -28,15 +29,6 @@ export default function TabLayout() {
           title: "Discover",
           tabBarIcon: ({ color, size }) => (
             <Compass size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="calendar"
-        options={{
-          title: "Calendar",
-          tabBarIcon: ({ color, size }) => (
-            <Calendar size={size} color={color} />
           ),
         }}
       />
