@@ -45,9 +45,6 @@ export default function SearchBar() {
           onBlur={handleBlur}
         />
       </Animated.View>
-      <TouchableOpacity style={styles.filterButton}>
-        <SlidersHorizontal size={22} color="#181818" />
-      </TouchableOpacity>
     </View>
   );
 }
