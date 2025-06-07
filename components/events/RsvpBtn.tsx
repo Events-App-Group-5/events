@@ -12,7 +12,7 @@ const RsvpBtn = ({ eventId }: { eventId: number }) => {
       }
 
       const uid = user.uid;
-      const userRef = ref(database, users/${uid});
+      const userRef = ref(database, `users/${uid}`);
 
       // Get current user data
       const snapshot = await get(userRef);
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
 });
-export default RsvpBtn;
+export default RsvpBtn;
