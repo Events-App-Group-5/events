@@ -26,7 +26,7 @@ export default function CategoryList({ categories }: CategoryListProps) {
         ref={flatListRef}
         data={categories}
         renderItem={({ item }) => <CategoryCard category={item} />}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.name}
         horizontal
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}

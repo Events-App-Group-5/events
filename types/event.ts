@@ -6,4 +6,5 @@ export interface Event {
   imageUrl: string;
   rating: number;
   isFavorite: boolean;
+  description: string;
 }

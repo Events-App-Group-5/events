@@ -14,10 +14,10 @@ export default function SectionHeader({
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity style={styles.seeAllContainer} onPress={onSeeAllPress}>
-        <Text style={styles.seeAllText}>See All</Text>
-        <ChevronRight size={16} color="#4CAF50" />
-      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.seeAllContainer}
+        onPress={onSeeAllPress}
+      ></TouchableOpacity>
     </View>
   );
 }

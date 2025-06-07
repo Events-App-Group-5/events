@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import "react-native-reanimated";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Text } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout({
@@ -36,9 +37,16 @@ export default function RootLayout({
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: true, headerTitle: "" }}>
-        {children}
-      </Stack>
+      <SafeAreaProvider>
+        <Stack
+          screenOptions={{
+            headerShown: true,
+            headerTitle: "",
+          }}
+        >
+          {children}
+        </Stack>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }

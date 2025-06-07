@@ -16,6 +16,7 @@ import MainButton from "@/components/MainButton";
 import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/FirebaseConfig";
+import SignUpBtn from "@/components/SignUpBtn";
 
 export default function RegisterScreen() {
   const [firstName, setFirstName] = useState("");
@@ -106,13 +107,9 @@ export default function RegisterScreen() {
           </TouchableOpacity>
         </View>
 
-        <MainButton
-          onPress={() => {
-            signUp();
-          }}
-        >
+        <SignUpBtn email={email} password={password}>
           Register
-        </MainButton>
+        </SignUpBtn>
       </View>
     </SafeAreaView>
   );

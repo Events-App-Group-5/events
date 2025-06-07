@@ -52,7 +52,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
     >
       <Animated.View style={[styles.container, animatedStyle]}>
         <ImageBackground
-          source={{ uri: category.imageUrl }}
+          source={{ uri: category.image }}
           style={styles.image}
           imageStyle={styles.imageStyle}
         >
