@@ -34,7 +34,7 @@ const SignUpBtn = ({
       console.log("User signed up and stored in database!");
       router.replace("/dashboard/(tabs)");
     } catch (error: any) {
-      alert(`Sign up failed: ${error.message}`);
+      alert(Sign up failed: ${error.message});
       console.error("Sign up failed:", error.message);
       throw error;
     }
